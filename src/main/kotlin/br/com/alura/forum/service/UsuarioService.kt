@@ -6,24 +6,38 @@ import java.util.*
 
 @Service
 data class UsuarioService(
-  var usuarios: List<Usuario>
+  private var usuarios: List<Usuario>
 ) {
+  
   init {
-    val usuario: Usuario = Usuario (
+    val usuario1 = Usuario(
       id = 1,
       nome = "Ana da Silva",
       email = "ana@email.com"
     )
-    usuarios = Arrays.asList(usuario)
+  
+   /* val usuario2 = Usuario(
+      id = 3,
+      nome = "Joana da Silva",
+      email = "Joana@email.com"
+    )
+  
+    val usuario3 = Usuario(
+      id = 4,
+      nome = "Maria da Silva",
+      email = "maria@email.com"
+    )*/
+    
+    usuarios = Arrays.asList(usuario1)
   }
   
-  fun buscaUsuarioPorId(idAutor: Long): Usuario {
+  fun buscaUsuarioPorId(id:Long) : Usuario {
     return usuarios.stream()
       .filter { u ->
-        u.id == idAutor
+        u.id == id
       }
       .findFirst()
       .get()
   }
-
+  
 }
