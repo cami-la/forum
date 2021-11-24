@@ -5,6 +5,7 @@ plugins {
 	id("org.springframework.boot") version "2.5.6"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id ("org.jetbrains.kotlin.plugin.noarg") version "1.6.0"
+	id("org.flywaydb.flyway") version "6.2.1"
 	kotlin("jvm") version "1.5.31"
 	kotlin("plugin.spring") version "1.5.31"
 	kotlin("plugin.jpa") version "1.3.72"
@@ -28,7 +29,10 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	
+	//DB
 	runtimeOnly("org.postgresql:postgresql")
+	implementation("org.flywaydb:flyway-core")
+	
 	
 }
 
